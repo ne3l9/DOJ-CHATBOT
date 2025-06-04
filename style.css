@@ -1,11 +1,43 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background:linear-gradient(90deg, rgb(255, 255, 255), rgb(133, 235, 255));;
+    height: 100vh; /* Important to make .content take full screen height */
+    display: flex;
+    flex-direction: column;
+}
 .header{
     display:flex;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     justify-content: space-evenly;
     background-color: rgb(52, 52, 255);
+    border-radius: 0.75rem;
+}
+.items{
+    padding: 8px 10px;
 }
 .items a{
     text-decoration: none;
     color: aliceblue;
-    font-size: 1.5em;
+    font-size: 1.25rem;
+    padding: 10px ;
+
 }
+.content{
+        display: flex;
+        flex:1;
+        justify-content: center;
+        align-items:center;
+}
+.chatbot {
+  padding: 5px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+ h2{
+    text-align: center;
+    font-family: 'Helvetica';
+}
+
