@@ -3,29 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOJ-chatbot</title>
-    <script src="./index.js" defer></script>
-    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="./app.js" defer></script>
 </head>
-<body>
-    <div class="header">
-        <div class="items">
-        <a href="#">Home</a>
-        </div>
-        <div class="items">
-            <a href="#">About Us</a>
-        </div>
-        <div class="items">
-            <a href="#">Contact Us</a>
-        </div>        
-    </div>
-    <h2 id="h2">Welcome, User...Click below to get Help</h2>
+<body class="light">
+    <nav class="navbar">
+        <ul class="navbar-nav">
+            <li class="nav-item"><a href="#">Home</a></li>
+            <li class="nav-item"><a href="#">About</a></li>           
+            <li class="nav-i"><a href="#">Login</a></li>
+        </ul>
+    </nav>
+    <header>
+        <img src="./justice-scales-of-balance-vector-686955.jpg" alt="justice-logo" class="logo">
+        <h1>Welcome User to Our Site</h1>
+        <p>Tap to chat below</p>
+    </header>
+    <main>
+        <div class="chat-wrapper">
+    <div class="chat-container">
+      <div class="background-image"></div>
+      <div id="chat">
+        <div class="message bot">Hello! How can I assist you today?</div>
+      </div>
 
-    <div class="content">
-    <div class="chatbot">
-        <input type="text" name="chatbox" id="chatbox">
+      <div class="input-container">
+        <form id="chatForm">
+          <input type="text" id="messageInput" placeholder="Type your message..." required />
+          <button type="submit">Send</button>
+        </form>
+      </div>
     </div>
-    </div>
-    </body>
+  </div>
+    </main>
 </body>
 </html>
