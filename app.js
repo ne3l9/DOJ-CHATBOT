@@ -35,7 +35,7 @@ async function sendMessage() {
   const intent = classifyIntent(message);
 
   try {
-    const response = await fetch("https://doj-backend-zffz.onrender.com/chat", {
+    const response = await fetch("https://doj-backend-zffz.onrender.com/api/chat", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ prompt: message, language: lang, intent: intent })
