@@ -3,7 +3,6 @@ const userInput = document.getElementById("user-input");
 const sendBtn = document.getElementById("send-btn");
 const languageSelect = document.getElementById("language");
 
-// Add message to chat window
 function addMessage(sender, text) {
   const messageDiv = document.createElement("div");
   messageDiv.classList.add("message", sender);
@@ -13,7 +12,6 @@ function addMessage(sender, text) {
   return messageDiv;
 }
 
-// Basic keyword-based intent classifier
 function classifyIntent(text) {
   const lower = text.toLowerCase();
   if (lower.includes("legal aid") || lower.includes("free lawyer")) return "legal_aid";
@@ -23,7 +21,6 @@ function classifyIntent(text) {
   return "general_legal_help";
 }
 
-// Send message to backend (non-streaming)
 async function sendMessage() {
   const message = userInput.value.trim();
   const lang = languageSelect.value;
@@ -38,31 +35,20 @@ async function sendMessage() {
   const intent = classifyIntent(message);
 
   try {
-    const response = await fetch("http://localhost:3000/chat", {
+    const response = await fetch("https://doj-backend-zffz.onrender.com/chat", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        prompt: message,
-        language: lang,
-        intent: intent
-      })
+      body: JSON.stringify({ prompt: message, language: lang, intent: intent })
     });
 
     const data = await response.json();
-
-    if (data.response) {
-      typingDiv.textContent = data.response;
-    } else {
-      typingDiv.textContent = "⚠️ No response from server.";
-    }
-
+    typingDiv.textContent = data.response || "⚠️ No response from server.";
   } catch (error) {
     console.error("Request error:", error);
     typingDiv.textContent = "⚠️ Failed to connect to server.";
   }
 }
 
-// Button + Enter key support
 sendBtn.addEventListener("click", sendMessage);
 userInput.addEventListener("keydown", (e) => {
   if (e.key === "Enter" && !e.shiftKey) {
