@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Legal AI Assistant</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet"/>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css"/>
+
+  <!-- OCR Library -->
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@2.1.5/dist/tesseract.min.js"></script>
+
+  <!-- App Script -->
+  <script src="app.js" defer></script>
+</head>
+
+<body class="light">
+  <!-- Navbar -->
+  <nav class="navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item"><a href="#">Home</a></li>
+      <li class="nav-item"><a href="#">About</a></li>
+      <li class="nav-item"><a href="#">Login</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header -->
+  <header class="header">
+    <img src="justice-scales-of-balance-vector-686955.jpg" alt="Justice Logo" class="logo"/>
+    <h1>Welcome User to Our Legal Chatbot</h1>
+    <p>Tap to chat below</p>
+  </header>
+
+  <!-- Main Chat UI -->
+  <main>
+    <div class="chat-wrapper">
+      <div class="chat-container">
+        <!-- Optional background -->
+        <div class="background-image"></div>
+
+        <!-- Chat Messages -->
+        <div id="chat" class="chat-box">
+          <div class="message bot">Hello! How can I assist you today?</div>
+        </div>
+
+        <!-- Input Field -->
+        <div class="input-container">
+          <form id="chatForm" onsubmit="return false;">
+            <input type="text" id="user-input" placeholder="Type your message..." required />
+            <select id="language">
+              <option value="en">English</option>
+              <option value="hi">Hindi</option>
+              <option value="or">Odia</option>
+            </select>
+            <button type="button" id="send-btn">Send</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
